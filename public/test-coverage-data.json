@@ -1,0 +1,642 @@
+{
+  "generatedAt": "2025-11-26T13:48:37Z",
+  "context": {
+    "repository": "strapi",
+    "pathsAnalyzed": [
+      "packages",
+      "tests/api",
+      "tests/cli",
+      "tests/e2e/tests",
+      "scripts",
+      "templates",
+      "examples",
+      "hackathon-ui",
+      "test-apps"
+    ]
+  },
+  "statistics": {
+    "unit": {
+      "featuresCovered": 27,
+      "testFileCount": 592
+    },
+    "integration": {
+      "featuresCovered": 13,
+      "testFileCount": 205
+    },
+    "e2e": {
+      "featuresCovered": 6,
+      "testFileCount": 67
+    },
+    "featureCoverage": {
+      "totalFeatures": 37,
+      "fullyCovered": 6,
+      "partiallyCovered": 24,
+      "noAutomatedCoverage": 7
+    }
+  },
+  "features": [
+    {
+      "featureKey": "admin-test-utils",
+      "displayName": "Admin Test Utils",
+      "sourceModulePath": "packages/admin-test-utils",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "none"
+    },
+    {
+      "featureKey": "cli/cloud",
+      "displayName": "Strapi Cloud CLI",
+      "sourceModulePath": "packages/cli/cloud",
+      "unitIntegration": {
+        "unitTestCount": 6,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "cli/create-strapi",
+      "displayName": "Create Strapi CLI",
+      "sourceModulePath": "packages/cli/create-strapi",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "none"
+    },
+    {
+      "featureKey": "cli/create-strapi-app",
+      "displayName": "Create Strapi App CLI",
+      "sourceModulePath": "packages/cli/create-strapi-app",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "none"
+    },
+    {
+      "featureKey": "cli/strapi",
+      "displayName": "Strapi CLI Commands",
+      "sourceModulePath": "packages/cli/strapi",
+      "unitIntegration": {
+        "unitTestCount": 8,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "core/admin",
+      "displayName": "Admin",
+      "sourceModulePath": "packages/core/admin",
+      "unitIntegration": {
+        "unitTestCount": 143,
+        "integrationTestCount": 23
+      },
+      "e2e": {
+        "testCount": 17
+      },
+      "coverageState": "full"
+    },
+    {
+      "featureKey": "core/core",
+      "displayName": "Core Runtime",
+      "sourceModulePath": "packages/core/core",
+      "unitIntegration": {
+        "unitTestCount": 45,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "core/data-transfer",
+      "displayName": "Data Transfer Engine",
+      "sourceModulePath": "packages/core/data-transfer",
+      "unitIntegration": {
+        "unitTestCount": 32,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "core/database",
+      "displayName": "Database Layer",
+      "sourceModulePath": "packages/core/database",
+      "unitIntegration": {
+        "unitTestCount": 87,
+        "integrationTestCount": 45
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "core/email",
+      "displayName": "Email Core",
+      "sourceModulePath": "packages/core/email",
+      "unitIntegration": {
+        "unitTestCount": 18,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "core/openapi",
+      "displayName": "OpenAPI Generator",
+      "sourceModulePath": "packages/core/openapi",
+      "unitIntegration": {
+        "unitTestCount": 22,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "core/permissions",
+      "displayName": "Permissions Engine",
+      "sourceModulePath": "packages/core/permissions",
+      "unitIntegration": {
+        "unitTestCount": 34,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "core/strapi",
+      "displayName": "Strapi Core CLI",
+      "sourceModulePath": "packages/core/strapi",
+      "unitIntegration": {
+        "unitTestCount": 15,
+        "integrationTestCount": 12
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "core/upload",
+      "displayName": "Upload",
+      "sourceModulePath": "packages/core/upload",
+      "unitIntegration": {
+        "unitTestCount": 41,
+        "integrationTestCount": 18
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "core/utils",
+      "displayName": "Core Utils",
+      "sourceModulePath": "packages/core/utils",
+      "unitIntegration": {
+        "unitTestCount": 28,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "generators/generators",
+      "displayName": "Code Generators",
+      "sourceModulePath": "packages/generators/generators",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "none"
+    },
+    {
+      "featureKey": "plugins/cloud",
+      "displayName": "Cloud Plugin",
+      "sourceModulePath": "packages/plugins/cloud",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "none"
+    },
+    {
+      "featureKey": "plugins/color-picker",
+      "displayName": "Color Picker Plugin",
+      "sourceModulePath": "packages/plugins/color-picker",
+      "unitIntegration": {
+        "unitTestCount": 3,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "plugins/content-releases",
+      "displayName": "Content Releases Plugin",
+      "sourceModulePath": "packages/plugins/content-releases",
+      "unitIntegration": {
+        "unitTestCount": 5,
+        "integrationTestCount": 12
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "plugins/documentation",
+      "displayName": "Documentation Plugin",
+      "sourceModulePath": "packages/plugins/documentation",
+      "unitIntegration": {
+        "unitTestCount": 4,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "plugins/graphql",
+      "displayName": "GraphQL",
+      "sourceModulePath": "packages/plugins/graphql",
+      "unitIntegration": {
+        "unitTestCount": 7,
+        "integrationTestCount": 15
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "plugins/sentry",
+      "displayName": "Sentry Plugin",
+      "sourceModulePath": "packages/plugins/sentry",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "none"
+    },
+    {
+      "featureKey": "plugins/users-permissions",
+      "displayName": "Users & Permissions",
+      "sourceModulePath": "packages/plugins/users-permissions",
+      "unitIntegration": {
+        "unitTestCount": 56,
+        "integrationTestCount": 34
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "providers/email-amazon-ses",
+      "displayName": "Email Amazon SES Provider",
+      "sourceModulePath": "packages/providers/email-amazon-ses",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "none"
+    },
+    {
+      "featureKey": "providers/email-mailgun",
+      "displayName": "Email Mailgun Provider",
+      "sourceModulePath": "packages/providers/email-mailgun",
+      "unitIntegration": {
+        "unitTestCount": 2,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "providers/email-sendgrid",
+      "displayName": "Email Sendgrid Provider",
+      "sourceModulePath": "packages/providers/email-sendgrid",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "none"
+    },
+    {
+      "featureKey": "providers/email-sendmail",
+      "displayName": "Email Sendmail Provider",
+      "sourceModulePath": "packages/providers/email-sendmail",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "none"
+    },
+    {
+      "featureKey": "providers/upload-aws-s3",
+      "displayName": "Upload AWS S3 Provider",
+      "sourceModulePath": "packages/providers/upload-aws-s3",
+      "unitIntegration": {
+        "unitTestCount": 5,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "providers/upload-local",
+      "displayName": "Upload Local Provider",
+      "sourceModulePath": "packages/providers/upload-local",
+      "unitIntegration": {
+        "unitTestCount": 3,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "scripts",
+      "displayName": "Front-end Scripts",
+      "sourceModulePath": "scripts",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "none"
+    },
+    {
+      "featureKey": "utils/typescript",
+      "displayName": "TypeScript Helpers",
+      "sourceModulePath": "packages/utils/typescript",
+      "unitIntegration": {
+        "unitTestCount": 9,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "partial"
+    },
+    {
+      "featureKey": "utils/upgrade",
+      "displayName": "Upgrade Assistant",
+      "sourceModulePath": "packages/utils/upgrade",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0
+      },
+      "e2e": {
+        "testCount": 0
+      },
+      "coverageState": "none"
+    }
+  ],
+  "blindSpots": [
+    {
+      "featureKey": "admin-test-utils",
+      "displayName": "Admin Test Utils",
+      "reason": "No unit or integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "cli/cloud",
+      "displayName": "Strapi Cloud CLI",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "cli/create-strapi",
+      "displayName": "Create Strapi CLI",
+      "reason": "No unit or integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "cli/create-strapi-app",
+      "displayName": "Create Strapi App CLI",
+      "reason": "No unit or integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "cli/strapi",
+      "displayName": "Strapi CLI Commands",
+      "reason": "Missing unit coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "core/core",
+      "displayName": "Core Runtime",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "core/data-transfer",
+      "displayName": "Data Transfer Engine",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "core/database",
+      "displayName": "Database Layer",
+      "reason": "Missing E2E coverage"
+    },
+    {
+      "featureKey": "core/email",
+      "displayName": "Email Core",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "core/openapi",
+      "displayName": "OpenAPI Generator",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "core/permissions",
+      "displayName": "Permissions Engine",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "core/strapi",
+      "displayName": "Strapi Core CLI",
+      "reason": "Missing E2E coverage"
+    },
+    {
+      "featureKey": "core/upload",
+      "displayName": "Upload",
+      "reason": "Missing E2E coverage"
+    },
+    {
+      "featureKey": "core/utils",
+      "displayName": "Core Utils",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "generators/generators",
+      "displayName": "Code Generators",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "plugins/cloud",
+      "displayName": "Cloud Plugin",
+      "reason": "No unit or integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "plugins/color-picker",
+      "displayName": "Color Picker Plugin",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "plugins/content-releases",
+      "displayName": "Content Releases Plugin",
+      "reason": "Missing unit coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "plugins/documentation",
+      "displayName": "Documentation Plugin",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "plugins/graphql",
+      "displayName": "GraphQL",
+      "reason": "Missing unit coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "plugins/sentry",
+      "displayName": "Sentry Plugin",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "plugins/users-permissions",
+      "displayName": "Users & Permissions",
+      "reason": "Missing E2E coverage"
+    },
+    {
+      "featureKey": "providers/email-amazon-ses",
+      "displayName": "Email Amazon SES Provider",
+      "reason": "No unit or integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "providers/email-mailgun",
+      "displayName": "Email Mailgun Provider",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "providers/email-sendgrid",
+      "displayName": "Email Sendgrid Provider",
+      "reason": "No unit or integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "providers/email-sendmail",
+      "displayName": "Email Sendmail Provider",
+      "reason": "No unit or integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "providers/upload-aws-s3",
+      "displayName": "Upload AWS S3 Provider",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "providers/upload-local",
+      "displayName": "Upload Local Provider",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "scripts",
+      "displayName": "Front-end Scripts",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "utils/typescript",
+      "displayName": "TypeScript Helpers",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    },
+    {
+      "featureKey": "utils/upgrade",
+      "displayName": "Upgrade Assistant",
+      "reason": "Missing integration coverage; Missing E2E coverage"
+    }
+  ],
+  "actionPlan": [
+    {
+      "description": "Backfill unit tests for admin-test-utils helpers to avoid regressions in plugin scaffolding",
+      "criticality": "High"
+    },
+    {
+      "description": "Add smoke and regression suites for create-strapi and create-strapi-app CLIs (unit + integration)",
+      "criticality": "High"
+    },
+    {
+      "description": "Extend Strapi Cloud CLI with integration tests and minimal E2E deploy checks",
+      "criticality": "High"
+    },
+    {
+      "description": "Introduce API/E2E tests for Users & Permissions plugin to cover role workflows in the UI",
+      "criticality": "Medium"
+    },
+    {
+      "description": "Add coverage for cloud plugin and email providers (SES, Sendgrid, Sendmail) to ensure configuration safety",
+      "criticality": "Medium"
+    },
+    {
+      "description": "Expand GraphQL plugin coverage with unit tests and admin E2E flows (schema toggle, query explorer)",
+      "criticality": "Medium"
+    },
+    {
+      "description": "Add targeted E2E smoke tests for upload and database migrations to validate real deployments",
+      "criticality": "Low"
+    }
+  ]
+}
