@@ -1,642 +1,879 @@
 {
-  "generatedAt": "2025-11-26T13:48:37Z",
+  "generatedAt": "2025-11-26",
   "context": {
-    "repository": "strapi",
+    "repository": "website-2020",
     "pathsAnalyzed": [
-      "packages",
-      "tests/api",
-      "tests/cli",
-      "tests/e2e/tests",
-      "scripts",
-      "templates",
-      "examples",
-      "hackathon-ui",
-      "test-apps"
+      "front/src",
+      "strapi-admin/src"
     ]
   },
   "statistics": {
     "unit": {
-      "featuresCovered": 27,
-      "testFileCount": 592
+      "featuresCovered": 1,
+      "testFileCount": 1
     },
     "integration": {
-      "featuresCovered": 13,
-      "testFileCount": 205
+      "featuresCovered": 0,
+      "testFileCount": 0
     },
     "e2e": {
-      "featuresCovered": 6,
-      "testFileCount": 67
+      "featuresCovered": 0,
+      "testFileCount": 0
     },
     "featureCoverage": {
-      "totalFeatures": 37,
-      "fullyCovered": 6,
-      "partiallyCovered": 24,
-      "noAutomatedCoverage": 7
+      "totalFeatures": 40,
+      "fullyCovered": 0,
+      "partiallyCovered": 1,
+      "noAutomatedCoverage": 39
     }
   },
   "features": [
     {
-      "featureKey": "admin-test-utils",
-      "displayName": "Admin Test Utils",
-      "sourceModulePath": "packages/admin-test-utils",
+      "featureKey": "strapi-data-fetching",
+      "displayName": "Strapi Data Fetching",
+      "sourceModulePath": "front/src/lib/Strapi",
+      "unitIntegration": {
+        "unitTestCount": 1,
+        "integrationTestCount": 0,
+        "unitTests": [
+          {
+            "path": "front/src/lib/Strapi/fetchAllSlugs.spec.js",
+            "area": "lib",
+            "title": "Concurrent Slug Fetching Performance Comparison",
+            "file": "fetchAllSlugs.spec.js"
+          }
+        ],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "partial",
+      "coveragePercentage": "20%"
+    },
+    {
+      "featureKey": "adapters-blog",
+      "displayName": "Blog Adapters",
+      "sourceModulePath": "front/src/adapters/blog",
       "unitIntegration": {
         "unitTestCount": 0,
-        "integrationTestCount": 0
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
       },
       "e2e": {
-        "testCount": 0
+        "testCount": 0,
+        "tests": []
       },
-      "coverageState": "none"
+      "coverageState": "none",
+      "coveragePercentage": "0%"
     },
     {
-      "featureKey": "cli/cloud",
-      "displayName": "Strapi Cloud CLI",
-      "sourceModulePath": "packages/cli/cloud",
-      "unitIntegration": {
-        "unitTestCount": 6,
-        "integrationTestCount": 0
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "cli/create-strapi",
-      "displayName": "Create Strapi CLI",
-      "sourceModulePath": "packages/cli/create-strapi",
+      "featureKey": "adapters-case-studies",
+      "displayName": "Case Studies Adapters",
+      "sourceModulePath": "front/src/adapters/case-studies",
       "unitIntegration": {
         "unitTestCount": 0,
-        "integrationTestCount": 0
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
       },
       "e2e": {
-        "testCount": 0
+        "testCount": 0,
+        "tests": []
       },
-      "coverageState": "none"
+      "coverageState": "none",
+      "coveragePercentage": "0%"
     },
     {
-      "featureKey": "cli/create-strapi-app",
-      "displayName": "Create Strapi App CLI",
-      "sourceModulePath": "packages/cli/create-strapi-app",
+      "featureKey": "adapters-community-stars",
+      "displayName": "Community Stars Adapters",
+      "sourceModulePath": "front/src/adapters/community-stars",
       "unitIntegration": {
         "unitTestCount": 0,
-        "integrationTestCount": 0
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
       },
       "e2e": {
-        "testCount": 0
+        "testCount": 0,
+        "tests": []
       },
-      "coverageState": "none"
+      "coverageState": "none",
+      "coveragePercentage": "0%"
     },
     {
-      "featureKey": "cli/strapi",
-      "displayName": "Strapi CLI Commands",
-      "sourceModulePath": "packages/cli/strapi",
-      "unitIntegration": {
-        "unitTestCount": 8,
-        "integrationTestCount": 0
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "core/admin",
-      "displayName": "Admin",
-      "sourceModulePath": "packages/core/admin",
-      "unitIntegration": {
-        "unitTestCount": 143,
-        "integrationTestCount": 23
-      },
-      "e2e": {
-        "testCount": 17
-      },
-      "coverageState": "full"
-    },
-    {
-      "featureKey": "core/core",
-      "displayName": "Core Runtime",
-      "sourceModulePath": "packages/core/core",
-      "unitIntegration": {
-        "unitTestCount": 45,
-        "integrationTestCount": 0
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "core/data-transfer",
-      "displayName": "Data Transfer Engine",
-      "sourceModulePath": "packages/core/data-transfer",
-      "unitIntegration": {
-        "unitTestCount": 32,
-        "integrationTestCount": 0
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "core/database",
-      "displayName": "Database Layer",
-      "sourceModulePath": "packages/core/database",
-      "unitIntegration": {
-        "unitTestCount": 87,
-        "integrationTestCount": 45
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "core/email",
-      "displayName": "Email Core",
-      "sourceModulePath": "packages/core/email",
-      "unitIntegration": {
-        "unitTestCount": 18,
-        "integrationTestCount": 0
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "core/openapi",
-      "displayName": "OpenAPI Generator",
-      "sourceModulePath": "packages/core/openapi",
-      "unitIntegration": {
-        "unitTestCount": 22,
-        "integrationTestCount": 0
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "core/permissions",
-      "displayName": "Permissions Engine",
-      "sourceModulePath": "packages/core/permissions",
-      "unitIntegration": {
-        "unitTestCount": 34,
-        "integrationTestCount": 0
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "core/strapi",
-      "displayName": "Strapi Core CLI",
-      "sourceModulePath": "packages/core/strapi",
-      "unitIntegration": {
-        "unitTestCount": 15,
-        "integrationTestCount": 12
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "core/upload",
-      "displayName": "Upload",
-      "sourceModulePath": "packages/core/upload",
-      "unitIntegration": {
-        "unitTestCount": 41,
-        "integrationTestCount": 18
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "core/utils",
-      "displayName": "Core Utils",
-      "sourceModulePath": "packages/core/utils",
-      "unitIntegration": {
-        "unitTestCount": 28,
-        "integrationTestCount": 0
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "generators/generators",
-      "displayName": "Code Generators",
-      "sourceModulePath": "packages/generators/generators",
+      "featureKey": "adapters-events",
+      "displayName": "Events Adapters",
+      "sourceModulePath": "front/src/adapters/events",
       "unitIntegration": {
         "unitTestCount": 0,
-        "integrationTestCount": 0
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
       },
       "e2e": {
-        "testCount": 0
+        "testCount": 0,
+        "tests": []
       },
-      "coverageState": "none"
+      "coverageState": "none",
+      "coveragePercentage": "0%"
     },
     {
-      "featureKey": "plugins/cloud",
-      "displayName": "Cloud Plugin",
-      "sourceModulePath": "packages/plugins/cloud",
+      "featureKey": "adapters-integrations",
+      "displayName": "Integrations Adapters",
+      "sourceModulePath": "front/src/adapters/integrations",
       "unitIntegration": {
         "unitTestCount": 0,
-        "integrationTestCount": 0
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
       },
       "e2e": {
-        "testCount": 0
+        "testCount": 0,
+        "tests": []
       },
-      "coverageState": "none"
+      "coverageState": "none",
+      "coveragePercentage": "0%"
     },
     {
-      "featureKey": "plugins/color-picker",
-      "displayName": "Color Picker Plugin",
-      "sourceModulePath": "packages/plugins/color-picker",
-      "unitIntegration": {
-        "unitTestCount": 3,
-        "integrationTestCount": 0
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "plugins/content-releases",
-      "displayName": "Content Releases Plugin",
-      "sourceModulePath": "packages/plugins/content-releases",
-      "unitIntegration": {
-        "unitTestCount": 5,
-        "integrationTestCount": 12
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "plugins/documentation",
-      "displayName": "Documentation Plugin",
-      "sourceModulePath": "packages/plugins/documentation",
-      "unitIntegration": {
-        "unitTestCount": 4,
-        "integrationTestCount": 0
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "plugins/graphql",
-      "displayName": "GraphQL",
-      "sourceModulePath": "packages/plugins/graphql",
-      "unitIntegration": {
-        "unitTestCount": 7,
-        "integrationTestCount": 15
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "plugins/sentry",
-      "displayName": "Sentry Plugin",
-      "sourceModulePath": "packages/plugins/sentry",
+      "featureKey": "adapters-partners",
+      "displayName": "Partners Adapters",
+      "sourceModulePath": "front/src/adapters/partners",
       "unitIntegration": {
         "unitTestCount": 0,
-        "integrationTestCount": 0
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
       },
       "e2e": {
-        "testCount": 0
+        "testCount": 0,
+        "tests": []
       },
-      "coverageState": "none"
+      "coverageState": "none",
+      "coveragePercentage": "0%"
     },
     {
-      "featureKey": "plugins/users-permissions",
-      "displayName": "Users & Permissions",
-      "sourceModulePath": "packages/plugins/users-permissions",
-      "unitIntegration": {
-        "unitTestCount": 56,
-        "integrationTestCount": 34
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "providers/email-amazon-ses",
-      "displayName": "Email Amazon SES Provider",
-      "sourceModulePath": "packages/providers/email-amazon-ses",
+      "featureKey": "adapters-resource-center",
+      "displayName": "Resource Center Adapters",
+      "sourceModulePath": "front/src/adapters/resource-center",
       "unitIntegration": {
         "unitTestCount": 0,
-        "integrationTestCount": 0
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
       },
       "e2e": {
-        "testCount": 0
+        "testCount": 0,
+        "tests": []
       },
-      "coverageState": "none"
+      "coverageState": "none",
+      "coveragePercentage": "0%"
     },
     {
-      "featureKey": "providers/email-mailgun",
-      "displayName": "Email Mailgun Provider",
-      "sourceModulePath": "packages/providers/email-mailgun",
-      "unitIntegration": {
-        "unitTestCount": 2,
-        "integrationTestCount": 0
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "providers/email-sendgrid",
-      "displayName": "Email Sendgrid Provider",
-      "sourceModulePath": "packages/providers/email-sendgrid",
+      "featureKey": "adapters-resources",
+      "displayName": "Resources Adapters",
+      "sourceModulePath": "front/src/adapters/resources",
       "unitIntegration": {
         "unitTestCount": 0,
-        "integrationTestCount": 0
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
       },
       "e2e": {
-        "testCount": 0
+        "testCount": 0,
+        "tests": []
       },
-      "coverageState": "none"
+      "coverageState": "none",
+      "coveragePercentage": "0%"
     },
     {
-      "featureKey": "providers/email-sendmail",
-      "displayName": "Email Sendmail Provider",
-      "sourceModulePath": "packages/providers/email-sendmail",
+      "featureKey": "adapters-showcases",
+      "displayName": "Showcases Adapters",
+      "sourceModulePath": "front/src/adapters/showcases",
       "unitIntegration": {
         "unitTestCount": 0,
-        "integrationTestCount": 0
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
       },
       "e2e": {
-        "testCount": 0
+        "testCount": 0,
+        "tests": []
       },
-      "coverageState": "none"
+      "coverageState": "none",
+      "coveragePercentage": "0%"
     },
     {
-      "featureKey": "providers/upload-aws-s3",
-      "displayName": "Upload AWS S3 Provider",
-      "sourceModulePath": "packages/providers/upload-aws-s3",
-      "unitIntegration": {
-        "unitTestCount": 5,
-        "integrationTestCount": 0
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "providers/upload-local",
-      "displayName": "Upload Local Provider",
-      "sourceModulePath": "packages/providers/upload-local",
-      "unitIntegration": {
-        "unitTestCount": 3,
-        "integrationTestCount": 0
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "scripts",
-      "displayName": "Front-end Scripts",
-      "sourceModulePath": "scripts",
+      "featureKey": "adapters-starters",
+      "displayName": "Starters Adapters",
+      "sourceModulePath": "front/src/adapters/starters",
       "unitIntegration": {
         "unitTestCount": 0,
-        "integrationTestCount": 0
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
       },
       "e2e": {
-        "testCount": 0
+        "testCount": 0,
+        "tests": []
       },
-      "coverageState": "none"
+      "coverageState": "none",
+      "coveragePercentage": "0%"
     },
     {
-      "featureKey": "utils/typescript",
-      "displayName": "TypeScript Helpers",
-      "sourceModulePath": "packages/utils/typescript",
-      "unitIntegration": {
-        "unitTestCount": 9,
-        "integrationTestCount": 0
-      },
-      "e2e": {
-        "testCount": 0
-      },
-      "coverageState": "partial"
-    },
-    {
-      "featureKey": "utils/upgrade",
-      "displayName": "Upgrade Assistant",
-      "sourceModulePath": "packages/utils/upgrade",
+      "featureKey": "adapters-tutorials",
+      "displayName": "Tutorials Adapters",
+      "sourceModulePath": "front/src/adapters/tutorials",
       "unitIntegration": {
         "unitTestCount": 0,
-        "integrationTestCount": 0
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
       },
       "e2e": {
-        "testCount": 0
+        "testCount": 0,
+        "tests": []
       },
-      "coverageState": "none"
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "services-api",
+      "displayName": "API Services",
+      "sourceModulePath": "front/src/services/api.js",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "services-algolia",
+      "displayName": "Algolia Search Services",
+      "sourceModulePath": "front/src/services/algolia.js",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "services-github",
+      "displayName": "GitHub Integration Services",
+      "sourceModulePath": "front/src/services/github.js",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "services-sitemap",
+      "displayName": "Sitemap Generation",
+      "sourceModulePath": "front/src/services/sitemap.js",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "lib-amplitude",
+      "displayName": "Amplitude Analytics",
+      "sourceModulePath": "front/src/lib/Amplitude",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "lib-formatting",
+      "displayName": "Text Formatting Utilities",
+      "sourceModulePath": "front/src/lib/formatting",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "lib-slugify",
+      "displayName": "URL Slug Generation",
+      "sourceModulePath": "front/src/lib/slugify.js",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "hooks-animation",
+      "displayName": "Animation Hooks",
+      "sourceModulePath": "front/src/hooks",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "hooks-forms",
+      "displayName": "Form Hooks (HubSpot, Newsletter)",
+      "sourceModulePath": "front/src/hooks",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "components-typo",
+      "displayName": "Typography Components",
+      "sourceModulePath": "front/src/components/typo",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "components-slices",
+      "displayName": "Page Slice Components",
+      "sourceModulePath": "front/src/components/slices",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "components-shared",
+      "displayName": "Shared UI Components",
+      "sourceModulePath": "front/src/components/shared",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "pages-blog",
+      "displayName": "Blog Pages",
+      "sourceModulePath": "front/src/pages/blog",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "pages-marketplace",
+      "displayName": "Marketplace Pages",
+      "sourceModulePath": "front/src/pages/marketplace",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "pages-partners",
+      "displayName": "Partners Pages",
+      "sourceModulePath": "front/src/pages/partners",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "pages-resource-center",
+      "displayName": "Resource Center Pages",
+      "sourceModulePath": "front/src/pages/resource-center",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "marketplace-services",
+      "displayName": "Marketplace Business Logic",
+      "sourceModulePath": "front/src/marketplace/services",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "strapi-api-blog",
+      "displayName": "Strapi Blog Content API",
+      "sourceModulePath": "strapi-admin/src/api/blog-post",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "strapi-api-integrations",
+      "displayName": "Strapi Integrations API",
+      "sourceModulePath": "strapi-admin/src/api/integration",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "strapi-api-partners",
+      "displayName": "Strapi Partners API",
+      "sourceModulePath": "strapi-admin/src/api/partner",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "strapi-api-showcases",
+      "displayName": "Strapi Showcases API",
+      "sourceModulePath": "strapi-admin/src/api/showcase",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "strapi-api-plans",
+      "displayName": "Strapi Plans/Pricing API",
+      "sourceModulePath": "strapi-admin/src/api/plan",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "strapi-api-careers",
+      "displayName": "Strapi Careers/Jobs API",
+      "sourceModulePath": "strapi-admin/src/api/career",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "strapi-middlewares",
+      "displayName": "Strapi Custom Middlewares",
+      "sourceModulePath": "strapi-admin/src/middlewares",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "strapi-plugins-populate-deep",
+      "displayName": "Strapi Populate Deep Plugin",
+      "sourceModulePath": "strapi-admin/src/plugins/strapi-plugin-populate-deep",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "strapi-extensions-users",
+      "displayName": "Strapi Users Permissions Extension",
+      "sourceModulePath": "strapi-admin/src/extensions/users-permissions",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "strapi-components",
+      "displayName": "Strapi CMS Components",
+      "sourceModulePath": "strapi-admin/src/components",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
+    },
+    {
+      "featureKey": "api-routes",
+      "displayName": "Next.js API Routes",
+      "sourceModulePath": "front/src/pages/api",
+      "unitIntegration": {
+        "unitTestCount": 0,
+        "integrationTestCount": 0,
+        "unitTests": [],
+        "integrationTests": []
+      },
+      "e2e": {
+        "testCount": 0,
+        "tests": []
+      },
+      "coverageState": "none",
+      "coveragePercentage": "0%"
     }
   ],
   "blindSpots": [
     {
-      "featureKey": "admin-test-utils",
-      "displayName": "Admin Test Utils",
-      "reason": "No unit or integration coverage; Missing E2E coverage"
+      "featureKey": "adapters-blog",
+      "displayName": "Blog Adapters",
+      "reason": "No unit, integration, or E2E coverage for data transformation logic"
     },
     {
-      "featureKey": "cli/cloud",
-      "displayName": "Strapi Cloud CLI",
-      "reason": "Missing integration coverage; Missing E2E coverage"
+      "featureKey": "adapters-case-studies",
+      "displayName": "Case Studies Adapters",
+      "reason": "No unit, integration, or E2E coverage for data transformation logic"
     },
     {
-      "featureKey": "cli/create-strapi",
-      "displayName": "Create Strapi CLI",
-      "reason": "No unit or integration coverage; Missing E2E coverage"
+      "featureKey": "adapters-integrations",
+      "displayName": "Integrations Adapters",
+      "reason": "No unit, integration, or E2E coverage for data transformation logic"
     },
     {
-      "featureKey": "cli/create-strapi-app",
-      "displayName": "Create Strapi App CLI",
-      "reason": "No unit or integration coverage; Missing E2E coverage"
+      "featureKey": "services-api",
+      "displayName": "API Services",
+      "reason": "Critical service layer with no test coverage - high risk for regressions"
     },
     {
-      "featureKey": "cli/strapi",
-      "displayName": "Strapi CLI Commands",
-      "reason": "Missing unit coverage; Missing E2E coverage"
+      "featureKey": "services-algolia",
+      "displayName": "Algolia Search Services",
+      "reason": "Search functionality untested - impacts user experience"
     },
     {
-      "featureKey": "core/core",
-      "displayName": "Core Runtime",
-      "reason": "Missing integration coverage; Missing E2E coverage"
+      "featureKey": "services-github",
+      "displayName": "GitHub Integration Services",
+      "reason": "External integration with no test coverage"
     },
     {
-      "featureKey": "core/data-transfer",
-      "displayName": "Data Transfer Engine",
-      "reason": "Missing integration coverage; Missing E2E coverage"
+      "featureKey": "lib-slugify",
+      "displayName": "URL Slug Generation",
+      "reason": "Utility function without unit tests - easy win for coverage"
     },
     {
-      "featureKey": "core/database",
-      "displayName": "Database Layer",
-      "reason": "Missing E2E coverage"
+      "featureKey": "lib-formatting",
+      "displayName": "Text Formatting Utilities",
+      "reason": "Pure functions without unit tests - easy win for coverage"
     },
     {
-      "featureKey": "core/email",
-      "displayName": "Email Core",
-      "reason": "Missing integration coverage; Missing E2E coverage"
+      "featureKey": "hooks-forms",
+      "displayName": "Form Hooks (HubSpot, Newsletter)",
+      "reason": "User-facing functionality with no test coverage"
     },
     {
-      "featureKey": "core/openapi",
-      "displayName": "OpenAPI Generator",
-      "reason": "Missing integration coverage; Missing E2E coverage"
+      "featureKey": "components-shared",
+      "displayName": "Shared UI Components",
+      "reason": "Reusable components without component tests"
     },
     {
-      "featureKey": "core/permissions",
-      "displayName": "Permissions Engine",
-      "reason": "Missing integration coverage; Missing E2E coverage"
+      "featureKey": "pages-blog",
+      "displayName": "Blog Pages",
+      "reason": "High-traffic pages with no E2E or integration tests"
     },
     {
-      "featureKey": "core/strapi",
-      "displayName": "Strapi Core CLI",
-      "reason": "Missing E2E coverage"
+      "featureKey": "pages-marketplace",
+      "displayName": "Marketplace Pages",
+      "reason": "Business-critical feature with no E2E tests"
     },
     {
-      "featureKey": "core/upload",
-      "displayName": "Upload",
-      "reason": "Missing E2E coverage"
+      "featureKey": "strapi-api-blog",
+      "displayName": "Strapi Blog Content API",
+      "reason": "Content API without any automated testing"
     },
     {
-      "featureKey": "core/utils",
-      "displayName": "Core Utils",
-      "reason": "Missing integration coverage; Missing E2E coverage"
+      "featureKey": "strapi-middlewares",
+      "displayName": "Strapi Custom Middlewares",
+      "reason": "Custom middleware logic without unit tests"
     },
     {
-      "featureKey": "generators/generators",
-      "displayName": "Code Generators",
-      "reason": "Missing integration coverage; Missing E2E coverage"
+      "featureKey": "strapi-plugins-populate-deep",
+      "displayName": "Strapi Populate Deep Plugin",
+      "reason": "Custom plugin with complex logic lacks test coverage"
     },
     {
-      "featureKey": "plugins/cloud",
-      "displayName": "Cloud Plugin",
-      "reason": "No unit or integration coverage; Missing E2E coverage"
+      "featureKey": "api-routes",
+      "displayName": "Next.js API Routes",
+      "reason": "Server-side API routes with no integration tests"
     },
     {
-      "featureKey": "plugins/color-picker",
-      "displayName": "Color Picker Plugin",
-      "reason": "Missing integration coverage; Missing E2E coverage"
-    },
-    {
-      "featureKey": "plugins/content-releases",
-      "displayName": "Content Releases Plugin",
-      "reason": "Missing unit coverage; Missing E2E coverage"
-    },
-    {
-      "featureKey": "plugins/documentation",
-      "displayName": "Documentation Plugin",
-      "reason": "Missing integration coverage; Missing E2E coverage"
-    },
-    {
-      "featureKey": "plugins/graphql",
-      "displayName": "GraphQL",
-      "reason": "Missing unit coverage; Missing E2E coverage"
-    },
-    {
-      "featureKey": "plugins/sentry",
-      "displayName": "Sentry Plugin",
-      "reason": "Missing integration coverage; Missing E2E coverage"
-    },
-    {
-      "featureKey": "plugins/users-permissions",
-      "displayName": "Users & Permissions",
-      "reason": "Missing E2E coverage"
-    },
-    {
-      "featureKey": "providers/email-amazon-ses",
-      "displayName": "Email Amazon SES Provider",
-      "reason": "No unit or integration coverage; Missing E2E coverage"
-    },
-    {
-      "featureKey": "providers/email-mailgun",
-      "displayName": "Email Mailgun Provider",
-      "reason": "Missing integration coverage; Missing E2E coverage"
-    },
-    {
-      "featureKey": "providers/email-sendgrid",
-      "displayName": "Email Sendgrid Provider",
-      "reason": "No unit or integration coverage; Missing E2E coverage"
-    },
-    {
-      "featureKey": "providers/email-sendmail",
-      "displayName": "Email Sendmail Provider",
-      "reason": "No unit or integration coverage; Missing E2E coverage"
-    },
-    {
-      "featureKey": "providers/upload-aws-s3",
-      "displayName": "Upload AWS S3 Provider",
-      "reason": "Missing integration coverage; Missing E2E coverage"
-    },
-    {
-      "featureKey": "providers/upload-local",
-      "displayName": "Upload Local Provider",
-      "reason": "Missing integration coverage; Missing E2E coverage"
-    },
-    {
-      "featureKey": "scripts",
-      "displayName": "Front-end Scripts",
-      "reason": "Missing integration coverage; Missing E2E coverage"
-    },
-    {
-      "featureKey": "utils/typescript",
-      "displayName": "TypeScript Helpers",
-      "reason": "Missing integration coverage; Missing E2E coverage"
-    },
-    {
-      "featureKey": "utils/upgrade",
-      "displayName": "Upgrade Assistant",
-      "reason": "Missing integration coverage; Missing E2E coverage"
+      "featureKey": "strapi-data-fetching",
+      "displayName": "Strapi Data Fetching",
+      "reason": "Only fetchAllSlugs tested - other fetching utilities untested (fetchContentType, fetchSingleType, spreadStrapiData)"
     }
   ],
   "actionPlan": [
     {
-      "description": "Backfill unit tests for admin-test-utils helpers to avoid regressions in plugin scaffolding",
+      "description": "Set up E2E testing framework (Playwright or Cypress) for the Next.js frontend",
       "criticality": "High"
     },
     {
-      "description": "Add smoke and regression suites for create-strapi and create-strapi-app CLIs (unit + integration)",
+      "description": "Add unit tests for pure utility functions in lib/formatting and lib/slugify",
+      "criticality": "Low",
+      "featureKey": "lib-formatting"
+    },
+    {
+      "description": "Add unit tests for remaining Strapi data fetching utilities (fetchContentType, fetchSingleType, spreadStrapiData)",
+      "criticality": "Medium",
+      "featureKey": "strapi-data-fetching"
+    },
+    {
+      "description": "Create integration tests for API services layer (front/src/services/api.js)",
+      "criticality": "High",
+      "featureKey": "services-api"
+    },
+    {
+      "description": "Add component tests for shared UI components using React Testing Library",
+      "criticality": "Medium",
+      "featureKey": "components-shared"
+    },
+    {
+      "description": "Write unit tests for data adapters to ensure proper data transformation",
+      "criticality": "Medium",
+      "featureKey": "adapters-blog"
+    },
+    {
+      "description": "Create E2E tests for critical user journeys: homepage, blog browsing, marketplace search",
       "criticality": "High"
     },
     {
-      "description": "Extend Strapi Cloud CLI with integration tests and minimal E2E deploy checks",
+      "description": "Add integration tests for Algolia search functionality",
+      "criticality": "Medium",
+      "featureKey": "services-algolia"
+    },
+    {
+      "description": "Set up test infrastructure for Strapi backend with Jest or Strapi's testing utilities",
       "criticality": "High"
     },
     {
-      "description": "Introduce API/E2E tests for Users & Permissions plugin to cover role workflows in the UI",
-      "criticality": "Medium"
+      "description": "Write unit tests for custom Strapi middlewares (filter-specific-fields, populate-deep)",
+      "criticality": "Medium",
+      "featureKey": "strapi-middlewares"
     },
     {
-      "description": "Add coverage for cloud plugin and email providers (SES, Sendgrid, Sendmail) to ensure configuration safety",
-      "criticality": "Medium"
+      "description": "Create API integration tests for critical Strapi endpoints",
+      "criticality": "High",
+      "featureKey": "strapi-api-blog"
     },
     {
-      "description": "Expand GraphQL plugin coverage with unit tests and admin E2E flows (schema toggle, query explorer)",
-      "criticality": "Medium"
+      "description": "Add tests for form hooks (useHubSpotForm, useNewsletter) to ensure form submissions work correctly",
+      "criticality": "Medium",
+      "featureKey": "hooks-forms"
     },
     {
-      "description": "Add targeted E2E smoke tests for upload and database migrations to validate real deployments",
+      "description": "Implement visual regression testing for key pages using tools like Percy or Chromatic",
       "criticality": "Low"
+    },
+    {
+      "description": "Add tests for Next.js API routes to validate request handling and response format",
+      "criticality": "Medium",
+      "featureKey": "api-routes"
+    },
+    {
+      "description": "Create contract tests between frontend and Strapi API to catch breaking changes",
+      "criticality": "High"
     }
   ]
 }
+
