@@ -11,6 +11,7 @@ interface ActionItem {
 
 interface ActionPlanProps {
   actionPlan: ActionItem[]
+  fullCoverageData?: any
 }
 
 const criticityConfig = {
@@ -37,7 +38,7 @@ const criticityConfig = {
   },
 }
 
-export default function ActionPlan({ actionPlan }: ActionPlanProps) {
+export default function ActionPlan({ actionPlan, fullCoverageData }: ActionPlanProps) {
   const [isLoading, setIsLoading] = useState(false)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
 
@@ -56,12 +57,18 @@ export default function ActionPlan({ actionPlan }: ActionPlanProps) {
     setSuccessMessage(null)
 
     try {
+      const projectName = fullCoverageData?.context?.repository || "unknown-project"
+
       const response = await fetch("https://n8n.tools.strapi.team/webhook-test/09da57f1-1d74-408e-922d-04dbe7915796", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ actionPlan }),
+        body: JSON.stringify({
+          projectName,
+          actionPlan,
+          fullCoverageData: fullCoverageData || null,
+        }),
       })
 
       if (response.ok) {

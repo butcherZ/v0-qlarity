@@ -325,7 +325,9 @@ export default function DashboardPage() {
           <RiskMatrix features={currentData.features} concerns={currentData.coverageConcerns || []} />
         )}
         {activeTab === "blindspots" && <BlindSpots blindSpots={currentData.blindSpots || []} />}
-        {activeTab === "actions" && <ActionPlan actionPlan={currentData.actionPlan || []} />}
+        {activeTab === "actions" && (
+          <ActionPlan actionPlan={currentData.actionPlan || []} fullCoverageData={currentData} />
+        )}
         {activeTab === "charts" && <CoverageCharts stats={currentData.statistics} />}
       </div>
     </main>
