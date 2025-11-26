@@ -244,13 +244,16 @@ export default function DashboardPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Header */}
-      <div className="border-b border-border bg-card sticky top-0 z-40">
+      <div className="border-b border-border/50 bg-card/50 backdrop-blur-xl sticky top-0 z-40 shadow-lg shadow-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="text-3xl font-bold text-foreground">Qlarity</h1>
+              <h1 className="text-3xl font-bold text-foreground flex items-center gap-2">
+                🛸 Qlarity <span className="text-primary">Mission Control</span>
+              </h1>
               <p className="text-sm text-muted-foreground">
-                Generated: <span className="font-medium">{new Date(currentData.generatedAt).toLocaleDateString()}</span>
+                🚀 Generated:{" "}
+                <span className="font-medium">{new Date(currentData.generatedAt).toLocaleDateString()}</span>
               </p>
             </div>
             <div className="flex items-center gap-4">
@@ -283,7 +286,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div className="flex gap-2 border-b border-border -mb-6 overflow-x-auto">
+          <div className="flex gap-2 border-b border-border/50 -mb-6 overflow-x-auto">
             {(["overview", "map", "pyramid", "risks", "blindspots", "actions", "charts"] as const).map((tab) => (
               <button
                 key={tab}

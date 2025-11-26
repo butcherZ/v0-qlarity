@@ -19,26 +19,26 @@ export default function FeaturesMap({ features }: { features: Feature[] }) {
   const getCoverageColor = (state: string) => {
     switch (state) {
       case "full":
-        return "bg-green-500 hover:bg-green-600"
+        return "bg-gradient-to-br from-[oklch(0.65_0.18_160)] to-[oklch(0.70_0.20_160)] hover:from-[oklch(0.70_0.20_160)] hover:to-[oklch(0.75_0.22_160)] shadow-[0_0_15px_oklch(0.65_0.18_160)]"
       case "partial":
-        return "bg-yellow-500 hover:bg-yellow-600"
+        return "bg-gradient-to-br from-[oklch(0.75_0.18_90)] to-[oklch(0.80_0.20_100)] hover:from-[oklch(0.80_0.20_100)] hover:to-[oklch(0.85_0.22_100)] shadow-[0_0_15px_oklch(0.75_0.18_90)]"
       case "none":
-        return "bg-red-500 hover:bg-red-600"
+        return "bg-gradient-to-br from-[oklch(0.55_0.25_25)] to-[oklch(0.60_0.28_30)] hover:from-[oklch(0.60_0.28_30)] hover:to-[oklch(0.65_0.30_30)] shadow-[0_0_15px_oklch(0.55_0.25_25)]"
       default:
-        return "bg-gray-500 hover:bg-gray-600"
+        return "bg-gradient-to-br from-muted to-secondary hover:from-secondary hover:to-muted"
     }
   }
 
   const getTextColor = (state: string) => {
     switch (state) {
       case "full":
-        return "text-green-600 dark:text-green-400"
+        return "text-[oklch(0.65_0.18_160)]"
       case "partial":
-        return "text-yellow-600 dark:text-yellow-400"
+        return "text-[oklch(0.75_0.18_90)]"
       case "none":
-        return "text-red-600 dark:text-red-400"
+        return "text-[oklch(0.60_0.28_25)]"
       default:
-        return "text-gray-600 dark:text-gray-400"
+        return "text-muted-foreground"
     }
   }
 
@@ -58,35 +58,45 @@ export default function FeaturesMap({ features }: { features: Feature[] }) {
     <div className="space-y-6">
       {/* Summary Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Card className="bg-card border-border">
+        <Card className="bg-card/80 backdrop-blur-sm border-[oklch(0.65_0.18_160)]/50 shadow-lg shadow-[oklch(0.65_0.18_160)]/10">
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Fully Covered</CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+              ✨ Fully Covered
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-green-600 dark:text-green-400">{fullyCovered}</div>
-            <p className="text-xs text-muted-foreground mt-2">{((fullyCovered / features.length) * 100).toFixed(1)}%</p>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-card border-border">
-          <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Partially Covered</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-3xl font-bold text-yellow-600 dark:text-yellow-400">{partiallyCovered}</div>
+            <div className="text-3xl font-bold text-[oklch(0.65_0.18_160)]">{fullyCovered}</div>
             <p className="text-xs text-muted-foreground mt-2">
-              {((partiallyCovered / features.length) * 100).toFixed(1)}%
+              {((fullyCovered / features.length) * 100).toFixed(1)}% stellar
             </p>
           </CardContent>
         </Card>
 
-        <Card className="bg-card border-border">
+        <Card className="bg-card/80 backdrop-blur-sm border-[oklch(0.75_0.18_90)]/50 shadow-lg shadow-[oklch(0.75_0.18_90)]/10">
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-muted-foreground">No Coverage</CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+              ⚡ Partially Covered
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-red-600 dark:text-red-400">{noCoverage}</div>
-            <p className="text-xs text-muted-foreground mt-2">{((noCoverage / features.length) * 100).toFixed(1)}%</p>
+            <div className="text-3xl font-bold text-[oklch(0.75_0.18_90)]">{partiallyCovered}</div>
+            <p className="text-xs text-muted-foreground mt-2">
+              {((partiallyCovered / features.length) * 100).toFixed(1)}% nebula
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-card/80 backdrop-blur-sm border-[oklch(0.55_0.25_25)]/50 shadow-lg shadow-[oklch(0.55_0.25_25)]/10">
+          <CardHeader className="pb-3">
+            <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+              🌑 No Coverage
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-3xl font-bold text-[oklch(0.60_0.28_25)]">{noCoverage}</div>
+            <p className="text-xs text-muted-foreground mt-2">
+              {((noCoverage / features.length) * 100).toFixed(1)}% void
+            </p>
           </CardContent>
         </Card>
       </div>
@@ -97,28 +107,28 @@ export default function FeaturesMap({ features }: { features: Feature[] }) {
           <button
             key={state}
             onClick={() => setFilter(state)}
-            className={`px-3 py-2 text-sm rounded-lg font-medium transition-colors capitalize ${
+            className={`px-3 py-2 text-sm rounded-lg font-medium transition-all capitalize ${
               filter === state
-                ? "bg-primary text-primary-foreground"
-                : "bg-secondary text-secondary-foreground hover:bg-muted"
+                ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                : "bg-secondary/50 backdrop-blur-sm text-secondary-foreground hover:bg-secondary/70 border border-border/50"
             }`}
           >
             {state === "all"
-              ? "All Features"
+              ? "🌌 All Features"
               : state === "full"
-                ? "Fully Covered"
+                ? "✨ Fully Covered"
                 : state === "partial"
-                  ? "Partially Covered"
-                  : "No Coverage"}
+                  ? "⚡ Partially Covered"
+                  : "🌑 No Coverage"}
           </button>
         ))}
       </div>
 
       {/* Features Map Grid */}
-      <Card className="bg-card border-border">
+      <Card className="bg-card/80 backdrop-blur-sm border-border/50">
         <CardHeader>
-          <CardTitle>Features Map - Coverage Overview</CardTitle>
-          <CardDescription>Interactive visualization of all features and their coverage state</CardDescription>
+          <CardTitle className="flex items-center gap-2">🗺️ Features Galaxy Map</CardTitle>
+          <CardDescription>Interactive visualization of all stellar features</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
@@ -136,11 +146,11 @@ export default function FeaturesMap({ features }: { features: Feature[] }) {
                   onMouseLeave={() => setHoveredFeature(null)}
                 >
                   <div
-                    className={`${getCoverageColor(feature.coverageState)} p-3 rounded-lg cursor-pointer transition-all transform group-hover:scale-105 shadow-sm`}
+                    className={`${getCoverageColor(feature.coverageState)} p-3 rounded-lg cursor-pointer transition-all transform group-hover:scale-110 group-hover:-translate-y-1`}
                   >
                     <div className="aspect-square flex flex-col items-center justify-center">
-                      <div className="text-2xl font-bold text-white">{totalTests}</div>
-                      <div className="text-xs text-white/80 text-center mt-1 leading-tight">
+                      <div className="text-2xl font-bold text-white drop-shadow-lg">{totalTests}</div>
+                      <div className="text-xs text-white/90 text-center mt-1 leading-tight drop-shadow">
                         {feature.displayName.split("/").pop()?.substring(0, 10)}
                       </div>
                     </div>
@@ -148,14 +158,18 @@ export default function FeaturesMap({ features }: { features: Feature[] }) {
 
                   {/* Tooltip */}
                   {hoveredFeature === feature.featureKey && (
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-50 w-48 bg-card border border-border rounded-lg p-3 shadow-lg text-xs">
-                      <div className="font-semibold text-foreground mb-2">{feature.displayName}</div>
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-50 w-48 bg-card/95 backdrop-blur-xl border border-primary/50 rounded-lg p-3 shadow-2xl shadow-primary/20 text-xs">
+                      <div className="font-semibold text-foreground mb-2 flex items-center gap-1">
+                        <span>🛸</span> {feature.displayName}
+                      </div>
                       <div className="space-y-1 text-muted-foreground">
-                        <div>Unit: {feature.unitIntegration.unitTestCount}</div>
-                        <div>Integration: {feature.unitIntegration.integrationTestCount}</div>
-                        <div>E2E: {feature.e2e.testCount}</div>
-                        <div className={`font-medium ${getTextColor(feature.coverageState)} capitalize`}>
-                          {feature.coverageState}
+                        <div>🔬 Unit: {feature.unitIntegration.unitTestCount}</div>
+                        <div>🔗 Integration: {feature.unitIntegration.integrationTestCount}</div>
+                        <div>🌍 E2E: {feature.e2e.testCount}</div>
+                        <div className={`font-medium ${getTextColor(feature.coverageState)} capitalize mt-2`}>
+                          {feature.coverageState === "full" && "✨ Fully Covered"}
+                          {feature.coverageState === "partial" && "⚡ Partially Covered"}
+                          {feature.coverageState === "none" && "🌑 No Coverage"}
                         </div>
                       </div>
                     </div>
@@ -168,9 +182,9 @@ export default function FeaturesMap({ features }: { features: Feature[] }) {
       </Card>
 
       {/* List View */}
-      <Card className="bg-card border-border">
+      <Card className="bg-card/80 backdrop-blur-sm border-border/50">
         <CardHeader>
-          <CardTitle>Detailed Features</CardTitle>
+          <CardTitle className="flex items-center gap-2">📋 Detailed Features</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-2">
@@ -183,18 +197,18 @@ export default function FeaturesMap({ features }: { features: Feature[] }) {
               return (
                 <div
                   key={feature.featureKey}
-                  className="flex items-center justify-between p-3 rounded-lg border border-border hover:bg-secondary/30 transition-colors"
+                  className="flex items-center justify-between p-3 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm hover:bg-card/70 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all"
                 >
                   <div className="flex-1">
                     <div className="font-medium text-foreground">{feature.displayName}</div>
-                    <div className="text-xs text-muted-foreground">{feature.sourceModulePath}</div>
+                    <div className="text-xs text-muted-foreground font-mono">{feature.sourceModulePath}</div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="text-sm text-muted-foreground">
                       <span className="font-semibold text-foreground">{totalTests}</span> tests
                     </div>
                     <div
-                      className={`inline-block w-3 h-3 rounded-full ${getCoverageColor(feature.coverageState)}`}
+                      className={`inline-block w-3 h-3 rounded-full ${getCoverageColor(feature.coverageState).split(" ")[0]}`}
                       title={feature.coverageState}
                     />
                   </div>

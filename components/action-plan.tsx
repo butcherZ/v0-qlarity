@@ -13,25 +13,25 @@ interface ActionPlanProps {
 
 const criticityConfig = {
   High: {
-    color: "text-red-600 dark:text-red-400",
-    bgColor: "bg-red-50 dark:bg-red-950/20",
-    borderColor: "border-red-200 dark:border-red-900/50",
-    badgeColor: "bg-red-100 dark:bg-red-900/40 text-red-900 dark:text-red-100",
-    symbol: "⚠",
+    color: "text-[oklch(0.60_0.28_25)]",
+    bgColor: "bg-[oklch(0.20_0.08_25)]/30 backdrop-blur-sm",
+    borderColor: "border-[oklch(0.55_0.25_25)]/50",
+    badgeColor: "bg-[oklch(0.55_0.25_25)]/20 text-[oklch(0.65_0.28_25)] border border-[oklch(0.55_0.25_25)]/30",
+    symbol: "🔴",
   },
   Medium: {
-    color: "text-amber-600 dark:text-amber-400",
-    bgColor: "bg-amber-50 dark:bg-amber-950/20",
-    borderColor: "border-amber-200 dark:border-amber-900/50",
-    badgeColor: "bg-amber-100 dark:bg-amber-900/40 text-amber-900 dark:text-amber-100",
-    symbol: "⚠",
+    color: "text-[oklch(0.75_0.18_90)]",
+    bgColor: "bg-[oklch(0.20_0.08_90)]/30 backdrop-blur-sm",
+    borderColor: "border-[oklch(0.75_0.18_90)]/50",
+    badgeColor: "bg-[oklch(0.75_0.18_90)]/20 text-[oklch(0.80_0.20_100)] border border-[oklch(0.75_0.18_90)]/30",
+    symbol: "🟡",
   },
   Low: {
-    color: "text-blue-600 dark:text-blue-400",
-    bgColor: "bg-blue-50 dark:bg-blue-950/20",
-    borderColor: "border-blue-200 dark:border-blue-900/50",
-    badgeColor: "bg-blue-100 dark:bg-blue-900/40 text-blue-900 dark:text-blue-100",
-    symbol: "ℹ",
+    color: "text-primary",
+    bgColor: "bg-primary/10 backdrop-blur-sm",
+    borderColor: "border-primary/50",
+    badgeColor: "bg-primary/20 text-primary border border-primary/30",
+    symbol: "🔵",
   },
 }
 
@@ -49,33 +49,37 @@ export default function ActionPlan({ actionPlan }: ActionPlanProps) {
   return (
     <div className="space-y-6">
       <div className="grid gap-4 md:grid-cols-3">
-        <Card className="border-red-200 dark:border-red-900/50 bg-red-50 dark:bg-red-950/20">
+        <Card className="border-[oklch(0.55_0.25_25)]/50 bg-[oklch(0.20_0.08_25)]/30 backdrop-blur-sm shadow-lg shadow-[oklch(0.55_0.25_25)]/10">
           <CardHeader className="pb-3">
-            <CardTitle className="text-base text-red-900 dark:text-red-200">Critical Actions</CardTitle>
+            <CardTitle className="text-base text-[oklch(0.65_0.28_25)] flex items-center gap-2">
+              🚨 Critical Actions
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-red-900 dark:text-red-100">{grouped.High.length}</div>
-            <p className="text-xs text-red-700 dark:text-red-300 mt-1">High criticality items</p>
+            <div className="text-3xl font-bold text-[oklch(0.65_0.28_25)]">{grouped.High.length}</div>
+            <p className="text-xs text-muted-foreground mt-1">High priority missions</p>
           </CardContent>
         </Card>
 
-        <Card className="border-amber-200 dark:border-amber-900/50 bg-amber-50 dark:bg-amber-950/20">
+        <Card className="border-[oklch(0.75_0.18_90)]/50 bg-[oklch(0.20_0.08_90)]/30 backdrop-blur-sm shadow-lg shadow-[oklch(0.75_0.18_90)]/10">
           <CardHeader className="pb-3">
-            <CardTitle className="text-base text-amber-900 dark:text-amber-200">Important Actions</CardTitle>
+            <CardTitle className="text-base text-[oklch(0.80_0.20_100)] flex items-center gap-2">
+              ⚠️ Important Actions
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-amber-900 dark:text-amber-100">{grouped.Medium.length}</div>
-            <p className="text-xs text-amber-700 dark:text-amber-300 mt-1">Medium criticality items</p>
+            <div className="text-3xl font-bold text-[oklch(0.80_0.20_100)]">{grouped.Medium.length}</div>
+            <p className="text-xs text-muted-foreground mt-1">Medium priority missions</p>
           </CardContent>
         </Card>
 
-        <Card className="border-blue-200 dark:border-blue-900/50 bg-blue-50 dark:bg-blue-950/20">
+        <Card className="border-primary/50 bg-primary/10 backdrop-blur-sm shadow-lg shadow-primary/10">
           <CardHeader className="pb-3">
-            <CardTitle className="text-base text-blue-900 dark:text-blue-200">Nice to Have</CardTitle>
+            <CardTitle className="text-base text-primary flex items-center gap-2">💫 Nice to Have</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-blue-900 dark:text-blue-100">{grouped.Low.length}</div>
-            <p className="text-xs text-blue-700 dark:text-blue-300 mt-1">Low criticality items</p>
+            <div className="text-3xl font-bold text-primary">{grouped.Low.length}</div>
+            <p className="text-xs text-muted-foreground mt-1">Low priority missions</p>
           </CardContent>
         </Card>
       </div>
@@ -88,22 +92,22 @@ export default function ActionPlan({ actionPlan }: ActionPlanProps) {
 
         return (
           <Card key={criticality} className={`border ${config.borderColor} ${config.bgColor}`}>
-            <CardHeader className="border-b">
+            <CardHeader className="border-b border-border/50">
               <CardTitle className="flex items-center gap-2 text-lg">
-                <span className={`text-2xl ${config.color}`}>{config.symbol}</span>
-                {criticality} Criticality
+                <span className="text-2xl">{config.symbol}</span>
+                {criticality} Criticality Missions
               </CardTitle>
-              <CardDescription>{items.length} action items</CardDescription>
+              <CardDescription>{items.length} action items in queue</CardDescription>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-3">
                 {items.map((item, idx) => (
                   <div
                     key={idx}
-                    className="flex gap-4 p-4 rounded-lg border border-border bg-card hover:bg-muted/50 transition-colors items-center"
+                    className="flex gap-4 p-4 rounded-lg border border-border/50 bg-card/50 backdrop-blur-sm hover:bg-card/70 hover:border-primary/30 transition-all items-center group"
                   >
                     <div className="flex-shrink-0 mt-1">
-                      <span className={`text-lg ${config.color}`}>✓</span>
+                      <span className="text-lg group-hover:scale-110 transition-transform inline-block">🎯</span>
                     </div>
                     <div className="flex-1 flex items-center">
                       <p className="text-foreground font-medium">{item.description}</p>
