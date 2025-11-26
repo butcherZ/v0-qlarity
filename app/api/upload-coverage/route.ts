@@ -1,4 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server"
+import { createClient } from "@/lib/supabase/server"
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,15 +18,32 @@ export async function POST(request: NextRequest) {
     const buffer = await file.arrayBuffer()
     const jsonContent = JSON.parse(Buffer.from(buffer).toString("utf-8"))
 
-    // In the v0 preview, files are stored via the client-side mechanism
     const filename = `${repository.replace(/[^a-z0-9-]/gi, "-")}.json`
+
+    const supabase = await createClient()
+
+    const { data, error } = await supabase
+      .from("coverage_reports")
+      .insert({
+        repository,
+        filename,
+        data: jsonContent,
+      })
+      .select()
+      .single()
+
+    if (error) {
+      console.error("[v0] Supabase error:", error)
+      return NextResponse.json({ error: "Failed to save to database: " + error.message }, { status: 500 })
+    }
 
     return NextResponse.json({
       success: true,
       filename,
       repository,
       data: jsonContent,
-      message: "JSON parsed successfully. File will be handled by the client.",
+      id: data.id,
+      message: "Coverage report saved successfully to Supabase",
     })
   } catch (error) {
     console.error("[v0] Upload error:", error)

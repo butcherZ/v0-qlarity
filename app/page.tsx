@@ -80,100 +80,85 @@ export default function DashboardPage() {
     "overview" | "map" | "pyramid" | "risks" | "blindspots" | "actions" | "charts"
   >("overview")
 
-  useEffect(() => {
-    const loadInitialData = async () => {
-      try {
-        const response = await fetch("/test-coverage-data.json")
-        const jsonData = await response.json()
+  const loadDataFromSupabase = async () => {
+    try {
+      const response = await fetch("/api/coverage-reports")
+      if (!response.ok) {
+        throw new Error("Failed to fetch from Supabase")
+      }
 
-        let contexts: CoverageData[] = []
-        if (jsonData.reports && Array.isArray(jsonData.reports)) {
-          contexts = jsonData.reports.map((report: any) => ({
-            ...report.data,
-            context: {
-              ...report.data.context,
-              repository: report.name || report.data.context.repository,
-            },
-          }))
-        } else if (jsonData.contexts && Array.isArray(jsonData.contexts)) {
-          contexts = jsonData.contexts
-        } else {
-          contexts = [jsonData]
-        }
+      const result = await response.json()
 
-        const initialStoredJSONs = contexts.map((ctx, idx) => ({
-          id: `default-${idx}`,
-          repository: ctx.context.repository,
-          data: ctx,
+      if (result.reports && result.reports.length > 0) {
+        const supabaseJSONs = result.reports.map((report: any) => ({
+          id: report.id,
+          repository: report.repository,
+          data: report.data,
         }))
 
-        setStoredJSONs(initialStoredJSONs)
-        setSelectedJSONId(initialStoredJSONs[0]?.id || null)
-        setAllContexts(contexts)
-      } catch (error) {
-        console.error("Failed to load coverage data:", error)
-      } finally {
-        setLoading(false)
+        setStoredJSONs(supabaseJSONs)
+        setSelectedJSONId(supabaseJSONs[0]?.id || null)
+        setAllContexts(supabaseJSONs.map((j: StoredJSON) => j.data))
+        return true
       }
+
+      return false
+    } catch (error) {
+      console.error("[v0] Failed to load from Supabase:", error)
+      return false
+    }
+  }
+
+  useEffect(() => {
+    const loadInitialData = async () => {
+      const loadedFromSupabase = await loadDataFromSupabase()
+
+      if (!loadedFromSupabase) {
+        try {
+          const response = await fetch("/test-coverage-data.json")
+          const jsonData = await response.json()
+
+          let contexts: CoverageData[] = []
+          if (jsonData.reports && Array.isArray(jsonData.reports)) {
+            contexts = jsonData.reports.map((report: any) => ({
+              ...report.data,
+              context: {
+                ...report.data.context,
+                repository: report.name || report.data.context.repository,
+              },
+            }))
+          } else if (jsonData.contexts && Array.isArray(jsonData.contexts)) {
+            contexts = jsonData.contexts
+          } else {
+            contexts = [jsonData]
+          }
+
+          const initialStoredJSONs = contexts.map((ctx, idx) => ({
+            id: `default-${idx}`,
+            repository: ctx.context.repository,
+            data: ctx,
+          }))
+
+          setStoredJSONs(initialStoredJSONs)
+          setSelectedJSONId(initialStoredJSONs[0]?.id || null)
+          setAllContexts(contexts)
+        } catch (error) {
+          console.error("[v0] Failed to load coverage data:", error)
+        }
+      }
+
+      setLoading(false)
     }
 
     loadInitialData()
   }, [])
 
-  const handleFileUpload = (uploadedData: CoverageData | MultiContextData | MultiReportData, repository: string) => {
-    let newContexts: CoverageData[] = []
-
-    if ("reports" in uploadedData && Array.isArray(uploadedData.reports)) {
-      newContexts = uploadedData.reports.map((report: any) => ({
-        ...report.data,
-        context: {
-          ...report.data.context,
-          repository: report.name || report.data.context.repository,
-        },
-      }))
-    } else if ("contexts" in uploadedData && Array.isArray(uploadedData.contexts)) {
-      newContexts = uploadedData.contexts
-    } else {
-      newContexts = [
-        {
-          ...(uploadedData as CoverageData),
-          context: {
-            ...(uploadedData as CoverageData).context,
-            repository: repository,
-          },
-        },
-      ]
-    }
-
-    const updatedStoredJSONs = [...storedJSONs]
-    const addedIds: string[] = []
-
-    newContexts.forEach((newCtx) => {
-      const existingIndex = updatedStoredJSONs.findIndex((stored) => stored.repository === newCtx.context.repository)
-
-      const id = `json-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
-
-      if (existingIndex >= 0) {
-        updatedStoredJSONs[existingIndex] = {
-          id,
-          repository: newCtx.context.repository,
-          data: newCtx,
-        }
-      } else {
-        updatedStoredJSONs.push({
-          id,
-          repository: newCtx.context.repository,
-          data: newCtx,
-        })
-      }
-
-      addedIds.push(id)
-    })
-
-    setStoredJSONs(updatedStoredJSONs)
-    setSelectedJSONId(addedIds[0])
-    setAllContexts(updatedStoredJSONs.map((s) => s.data))
-    setSelectedContextIndex(0)
+  const handleFileUpload = async (
+    uploadedData: CoverageData | MultiContextData | MultiReportData,
+    repository: string,
+  ) => {
+    // Reload all data from Supabase to get the latest
+    await loadDataFromSupabase()
     setActiveTab("overview")
   }
 
