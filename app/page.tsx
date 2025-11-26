@@ -10,6 +10,7 @@ import BlindSpots from "@/components/blind-spots"
 import ActionPlan from "@/components/action-plan"
 import FileUpload from "@/components/file-upload"
 import { Card } from "@/components/ui/card"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 interface CoverageData {
   generatedAt: string
@@ -257,6 +258,7 @@ export default function DashboardPage() {
               </p>
             </div>
             <div className="flex items-center gap-4">
+              <ThemeToggle />
               <FileUpload onUpload={handleFileUpload} />
               <div className="flex items-center gap-2">
                 <label htmlFor="view-select" className="text-sm font-medium text-foreground whitespace-nowrap">

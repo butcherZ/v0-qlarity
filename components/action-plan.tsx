@@ -1,6 +1,8 @@
 "use client"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { useState } from "react"
 
 interface ActionItem {
   description: string
@@ -36,6 +38,9 @@ const criticityConfig = {
 }
 
 export default function ActionPlan({ actionPlan }: ActionPlanProps) {
+  const [isLoading, setIsLoading] = useState(false)
+  const [successMessage, setSuccessMessage] = useState<string | null>(null)
+
   const groupByCriticality = (items: ActionItem[]) => {
     return {
       High: items.filter((i) => i.criticality === "High"),
@@ -46,8 +51,59 @@ export default function ActionPlan({ actionPlan }: ActionPlanProps) {
 
   const grouped = groupByCriticality(actionPlan)
 
+  const handleGenerateTickets = async () => {
+    setIsLoading(true)
+    setSuccessMessage(null)
+
+    try {
+      const response = await fetch("https://n8n.tools.strapi.team/webhook-test/09da57f1-1d74-408e-922d-04dbe7915796", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ actionPlan }),
+      })
+
+      if (response.ok) {
+        setSuccessMessage("Tickets generated successfully!")
+        setTimeout(() => setSuccessMessage(null), 3000)
+      } else {
+        throw new Error("Failed to generate tickets")
+      }
+    } catch (error) {
+      console.error("Error generating tickets:", error)
+      setSuccessMessage("Failed to generate tickets")
+      setTimeout(() => setSuccessMessage(null), 3000)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">🚀 Mission Action Plan</h2>
+          <p className="text-sm text-muted-foreground mt-1">Strategic actions to improve test coverage</p>
+        </div>
+        <div className="flex items-center gap-3">
+          {successMessage && (
+            <span
+              className={`text-sm font-medium ${successMessage.includes("success") ? "text-primary" : "text-destructive"}`}
+            >
+              {successMessage}
+            </span>
+          )}
+          <Button
+            onClick={handleGenerateTickets}
+            disabled={isLoading}
+            className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20"
+          >
+            {isLoading ? "Generating..." : "🎫 Generate Tickets and Test"}
+          </Button>
+        </div>
+      </div>
+
       <div className="grid gap-4 md:grid-cols-3">
         <Card className="border-[oklch(0.55_0.25_25)]/50 bg-[oklch(0.20_0.08_25)]/30 backdrop-blur-sm shadow-lg shadow-[oklch(0.55_0.25_25)]/10">
           <CardHeader className="pb-3">

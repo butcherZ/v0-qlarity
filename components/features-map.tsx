@@ -23,7 +23,7 @@ export default function FeaturesMap({ features }: { features: Feature[] }) {
       case "partial":
         return "bg-gradient-to-br from-[oklch(0.75_0.18_90)] to-[oklch(0.80_0.20_100)] hover:from-[oklch(0.80_0.20_100)] hover:to-[oklch(0.85_0.22_100)] shadow-[0_0_15px_oklch(0.75_0.18_90)]"
       case "none":
-        return "bg-gradient-to-br from-[oklch(0.55_0.25_25)] to-[oklch(0.60_0.28_30)] hover:from-[oklch(0.60_0.28_30)] hover:to-[oklch(0.65_0.30_30)] shadow-[0_0_15px_oklch(0.55_0.25_25)]"
+        return "bg-gradient-to-br from-[oklch(0.48_0.09_25)] to-[oklch(0.52_0.10_30)] hover:from-[oklch(0.52_0.10_30)] hover:to-[oklch(0.56_0.11_30)] shadow-[0_0_15px_oklch(0.48_0.09_25)]"
       default:
         return "bg-gradient-to-br from-muted to-secondary hover:from-secondary hover:to-muted"
     }
@@ -36,7 +36,7 @@ export default function FeaturesMap({ features }: { features: Feature[] }) {
       case "partial":
         return "text-[oklch(0.75_0.18_90)]"
       case "none":
-        return "text-[oklch(0.60_0.28_25)]"
+        return "text-[oklch(0.55_0.12_25)]"
       default:
         return "text-muted-foreground"
     }
@@ -86,14 +86,14 @@ export default function FeaturesMap({ features }: { features: Feature[] }) {
           </CardContent>
         </Card>
 
-        <Card className="bg-card/80 backdrop-blur-sm border-[oklch(0.55_0.25_25)]/50 shadow-lg shadow-[oklch(0.55_0.25_25)]/10">
+        <Card className="bg-card/80 backdrop-blur-sm border-[oklch(0.48_0.09_25)]/50 shadow-lg shadow-[oklch(0.48_0.09_25)]/10">
           <CardHeader className="pb-3">
             <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
               🌑 No Coverage
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-[oklch(0.60_0.28_25)]">{noCoverage}</div>
+            <div className="text-3xl font-bold text-[oklch(0.55_0.12_25)]">{noCoverage}</div>
             <p className="text-xs text-muted-foreground mt-2">
               {((noCoverage / features.length) * 100).toFixed(1)}% void
             </p>
@@ -150,8 +150,8 @@ export default function FeaturesMap({ features }: { features: Feature[] }) {
                   >
                     <div className="aspect-square flex flex-col items-center justify-center">
                       <div className="text-2xl font-bold text-white drop-shadow-lg">{totalTests}</div>
-                      <div className="text-xs text-white/90 text-center mt-1 leading-tight drop-shadow">
-                        {feature.displayName.split("/").pop()?.substring(0, 10)}
+                      <div className="text-xs text-white/90 text-center mt-1 leading-tight drop-shadow line-clamp-2 w-full px-1">
+                        {feature.displayName.split("/").pop()}
                       </div>
                     </div>
                   </div>

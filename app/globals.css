@@ -3,51 +3,53 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Space-themed color palette with deep space backgrounds and cosmic accents */
+/* Space-themed color palette with accessible colors and better contrast */
 :root {
-  --background: oklch(0.12 0.02 260);
-  --foreground: oklch(0.95 0.02 260);
-  --card: oklch(0.16 0.03 260);
-  --card-foreground: oklch(0.95 0.02 260);
-  --popover: oklch(0.16 0.03 260);
-  --popover-foreground: oklch(0.95 0.02 260);
-  --primary: oklch(0.65 0.25 280);
+  /* Light mode colors for space theme */
+  --background: oklch(0.98 0.01 260);
+  --foreground: oklch(0.15 0.02 260);
+  --card: oklch(0.96 0.02 260);
+  --card-foreground: oklch(0.15 0.02 260);
+  --popover: oklch(0.96 0.02 260);
+  --popover-foreground: oklch(0.15 0.02 260);
+  --primary: oklch(0.55 0.25 280);
   --primary-foreground: oklch(0.98 0.01 260);
-  --secondary: oklch(0.22 0.04 260);
-  --secondary-foreground: oklch(0.95 0.02 260);
-  --muted: oklch(0.22 0.04 260);
-  --muted-foreground: oklch(0.68 0.03 260);
-  --accent: oklch(0.55 0.22 320);
+  --secondary: oklch(0.92 0.02 260);
+  --secondary-foreground: oklch(0.15 0.02 260);
+  --muted: oklch(0.92 0.02 260);
+  --muted-foreground: oklch(0.45 0.03 260);
+  --accent: oklch(0.5 0.22 320);
   --accent-foreground: oklch(0.98 0.01 260);
-  --destructive: oklch(0.55 0.25 25);
+  --destructive: oklch(0.48 0.1 25);
   --destructive-foreground: oklch(0.98 0.01 260);
-  --border: oklch(0.28 0.04 260);
-  --input: oklch(0.28 0.04 260);
-  --ring: oklch(0.65 0.25 280);
-  --chart-1: oklch(0.65 0.25 280);
-  --chart-2: oklch(0.6 0.22 200);
-  --chart-3: oklch(0.7 0.2 320);
-  --chart-4: oklch(0.65 0.18 160);
-  --chart-5: oklch(0.6 0.22 40);
+  --border: oklch(0.88 0.02 260);
+  --input: oklch(0.88 0.02 260);
+  --ring: oklch(0.55 0.25 280);
+  --chart-1: oklch(0.55 0.25 280);
+  --chart-2: oklch(0.5 0.22 200);
+  --chart-3: oklch(0.6 0.2 320);
+  --chart-4: oklch(0.55 0.18 160);
+  --chart-5: oklch(0.55 0.15 50);
   --radius: 0.75rem;
-  --sidebar: oklch(0.14 0.02 260);
-  --sidebar-foreground: oklch(0.95 0.02 260);
-  --sidebar-primary: oklch(0.65 0.25 280);
+  --sidebar: oklch(0.94 0.01 260);
+  --sidebar-foreground: oklch(0.15 0.02 260);
+  --sidebar-primary: oklch(0.55 0.25 280);
   --sidebar-primary-foreground: oklch(0.98 0.01 260);
-  --sidebar-accent: oklch(0.22 0.04 260);
-  --sidebar-accent-foreground: oklch(0.95 0.02 260);
-  --sidebar-border: oklch(0.28 0.04 260);
-  --sidebar-ring: oklch(0.65 0.25 280);
+  --sidebar-accent: oklch(0.92 0.02 260);
+  --sidebar-accent-foreground: oklch(0.15 0.02 260);
+  --sidebar-border: oklch(0.88 0.02 260);
+  --sidebar-ring: oklch(0.55 0.25 280);
 
-  /* Space-themed custom colors */
-  --nebula-purple: oklch(0.55 0.22 320);
-  --cosmic-blue: oklch(0.6 0.22 200);
-  --star-yellow: oklch(0.75 0.18 90);
-  --mars-red: oklch(0.55 0.25 25);
-  --alien-green: oklch(0.65 0.18 160);
+  /* Updated space-themed custom colors for better accessibility */
+  --nebula-purple: oklch(0.5 0.18 320);
+  --cosmic-blue: oklch(0.52 0.18 220);
+  --star-yellow: oklch(0.6 0.1 90);
+  --mars-red: oklch(0.48 0.09 25);
+  --alien-green: oklch(0.52 0.15 160);
 }
 
 .dark {
+  /* Dark mode space colors remain the same */
   --background: oklch(0.1 0.02 260);
   --foreground: oklch(0.98 0.01 260);
   --card: oklch(0.14 0.03 260);
@@ -59,10 +61,10 @@
   --secondary: oklch(0.2 0.04 260);
   --secondary-foreground: oklch(0.98 0.01 260);
   --muted: oklch(0.2 0.04 260);
-  --muted-foreground: oklch(0.72 0.03 260);
+  --muted-foreground: oklch(0.75 0.03 260);
   --accent: oklch(0.6 0.25 320);
   --accent-foreground: oklch(0.98 0.01 260);
-  --destructive: oklch(0.6 0.28 25);
+  --destructive: oklch(0.48 0.11 25);
   --destructive-foreground: oklch(0.98 0.01 260);
   --border: oklch(0.26 0.04 260);
   --input: oklch(0.26 0.04 260);
@@ -71,7 +73,7 @@
   --chart-2: oklch(0.65 0.25 200);
   --chart-3: oklch(0.75 0.22 320);
   --chart-4: oklch(0.7 0.2 160);
-  --chart-5: oklch(0.65 0.25 40);
+  --chart-5: oklch(0.68 0.16 50);
   --sidebar: oklch(0.12 0.02 260);
   --sidebar-foreground: oklch(0.98 0.01 260);
   --sidebar-primary: oklch(0.7 0.28 280);
@@ -129,12 +131,19 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* Light mode gets subtle gradient */
+    background-image: radial-gradient(circle at 20% 50%, oklch(0.9 0.04 280 / 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, oklch(0.9 0.04 320 / 0.3) 0%, transparent 50%);
+  }
+
+  .dark body {
+    /* Dark mode keeps nebula effect */
     background-image: radial-gradient(circle at 20% 50%, oklch(0.2 0.08 280 / 0.15) 0%, transparent 50%),
       radial-gradient(circle at 80% 80%, oklch(0.2 0.08 320 / 0.15) 0%, transparent 50%);
   }
 
-  /* Starfield effect */
-  body::before {
+  /* Starfield effect only visible in dark mode */
+  .dark body::before {
     content: "";
     position: fixed;
     top: 0;
