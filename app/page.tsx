@@ -253,7 +253,7 @@ export default function DashboardPage() {
                 🛸 Qlarity <span className="text-primary">Mission Control</span>
               </h1>
               <p className="text-sm text-muted-foreground">
-                🚀 Generated:{" "}
+                🚀 Last Generated:{" "}
                 <span className="font-medium">{new Date(currentData.generatedAt).toLocaleDateString()}</span>
               </p>
             </div>
