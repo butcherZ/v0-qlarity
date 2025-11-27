@@ -67,7 +67,6 @@ export default function ActionPlan({ actionPlan, fullCoverageData }: ActionPlanP
         body: JSON.stringify({
           projectName,
           actionPlan,
-          fullCoverageData: fullCoverageData || null,
         }),
       })
 
@@ -112,7 +111,7 @@ export default function ActionPlan({ actionPlan, fullCoverageData }: ActionPlanP
       </div>
 
       <div className="grid gap-4 md:grid-cols-3">
-        <Card className="border-[oklch(0.55_0.25_25)]/50 bg-[oklch(0.20_0.08_25)]/30 backdrop-blur-sm shadow-lg shadow-[oklch(0.55_0.25_25)]/10">
+        <Card className="border-[oklch(0.55_0.25_25)]/50 bg-muted/50 backdrop-blur-sm shadow-lg shadow-[oklch(0.55_0.25_25)]/10">
           <CardHeader className="pb-3">
             <CardTitle className="text-base text-[oklch(0.65_0.28_25)] flex items-center gap-2">
               🚨 Critical Actions
@@ -124,7 +123,7 @@ export default function ActionPlan({ actionPlan, fullCoverageData }: ActionPlanP
           </CardContent>
         </Card>
 
-        <Card className="border-[oklch(0.75_0.18_90)]/50 bg-[oklch(0.20_0.08_90)]/30 backdrop-blur-sm shadow-lg shadow-[oklch(0.75_0.18_90)]/10">
+        <Card className="border-[oklch(0.75_0.18_90)]/50 bg-muted/50 backdrop-blur-sm shadow-lg shadow-[oklch(0.75_0.18_90)]/10">
           <CardHeader className="pb-3">
             <CardTitle className="text-base text-[oklch(0.80_0.20_100)] flex items-center gap-2">
               ⚠️ Important Actions
@@ -136,7 +135,7 @@ export default function ActionPlan({ actionPlan, fullCoverageData }: ActionPlanP
           </CardContent>
         </Card>
 
-        <Card className="border-primary/50 bg-primary/10 backdrop-blur-sm shadow-lg shadow-primary/10">
+        <Card className="border-primary/50 bg-muted/50 backdrop-blur-sm shadow-lg shadow-primary/10">
           <CardHeader className="pb-3">
             <CardTitle className="text-base text-primary flex items-center gap-2">💫 Nice to Have</CardTitle>
           </CardHeader>
@@ -154,7 +153,7 @@ export default function ActionPlan({ actionPlan, fullCoverageData }: ActionPlanP
         const config = criticityConfig[criticality]
 
         return (
-          <Card key={criticality} className={`border ${config.borderColor} ${config.bgColor}`}>
+          <Card key={criticality} className={`border ${config.borderColor} bg-card/50 backdrop-blur-sm`}>
             <CardHeader className="border-b border-border/50">
               <CardTitle className="flex items-center gap-2 text-lg">
                 <span className="text-2xl">{config.symbol}</span>

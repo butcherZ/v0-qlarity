@@ -29,7 +29,7 @@ export default function BlindSpots({ blindSpots }: BlindSpotsProps) {
   return (
     <div className="space-y-6">
       <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
-        <Card className="border-[oklch(0.75_0.18_90)]/50 bg-[oklch(0.20_0.08_90)]/30 backdrop-blur-sm shadow-lg shadow-[oklch(0.75_0.18_90)]/10">
+        <Card className="border-[oklch(0.75_0.18_90)]/50 bg-muted/50 backdrop-blur-sm shadow-lg shadow-[oklch(0.75_0.18_90)]/10">
           <CardHeader className="pb-3">
             <CardTitle className="text-base text-[oklch(0.80_0.20_100)] flex items-center gap-2">
               🌑 Total Blind Spots
@@ -44,7 +44,7 @@ export default function BlindSpots({ blindSpots }: BlindSpotsProps) {
         {reasonCounts.slice(0, 3).map(([reason, spots]) => (
           <Card
             key={reason}
-            className="border-[oklch(0.55_0.25_25)]/50 bg-[oklch(0.20_0.08_25)]/30 backdrop-blur-sm shadow-lg shadow-[oklch(0.55_0.25_25)]/10"
+            className="border-[oklch(0.55_0.25_25)]/50 bg-muted/50 backdrop-blur-sm shadow-lg shadow-[oklch(0.55_0.25_25)]/10"
           >
             <CardHeader className="pb-3">
               <CardTitle className="text-base text-[oklch(0.65_0.28_25)] line-clamp-2 flex items-center gap-2">
